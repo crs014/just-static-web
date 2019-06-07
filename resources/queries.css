@@ -1,0 +1,85 @@
+/* Big table to 1200px (width smaller than 1140px row)*/
+@media only screen and (max-width: 1200px) {
+    #user-profile #profile-picture {
+        width: 100%;
+    }
+
+    #user-profile #profile-picture img {
+        width: 35%;
+        object-fit: cover;    
+    }
+
+    #user-profile #profile-description {
+        width: 100%;
+    }
+
+    #user-profile #profile-description p {
+        text-align: center;
+    }
+}
+
+
+/*Small table to big tablet: from 768 to 1023px*/
+@media only screen and (max-width: 1023px) {
+    body { 
+        font-size: 17px; 
+    }
+    aside {
+        width: 25%;
+    }
+
+    section {
+        width: 75%;
+    }
+    .box-well h4 {
+        font-size: 100%;
+        font-weight: 400; 
+    }
+}
+
+
+/*Small phones to small tablets: from 481 to 767px*/
+@media only screen and (max-width: 767px) {
+    body {
+        font-size : 19px;
+    }
+    
+    .box-well h4 {
+        font-size: 125%;
+        font-weight:700; 
+    }
+
+    nav {
+        z-index: 1;
+        display : block;
+    }
+    
+    #logo-menu {
+        display: none;
+    }
+
+    aside {
+        padding-top: 10vh;
+        position: fixed;
+        font-size: 100%;
+        height: 100%;
+        width: 49%;
+        display: block;
+        overflow-x: scroll;
+    }
+
+    section {
+        z-index: -1;
+        padding-top: 10vh;
+        width: 100%;
+    }
+}
+
+
+/*Small phone: from 0 to 480px*/
+@media only screen and (max-width: 480px) {
+    .btn {
+        font-size: 80%;
+        padding: 5px 7px 5px 7px;
+    }
+}

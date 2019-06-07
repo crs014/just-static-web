@@ -1,0 +1,253 @@
+/*========================*/
+/*       BASIC SETUP
+/*========================*/
+* {
+    margin : 0;
+    padding: 0;
+    letter-spacing: 1.2px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+html, 
+body {
+    background-color: #fff;
+    color: #555;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    text-rendering: optimizeLegibility;
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+
+/*======button=======*/
+.btn {
+    padding: 6px 9px 6px 9px;
+    font-size: 110%;
+    background: none;
+    color :#fff; 
+    border: 2px solid;
+    border-color: #555;
+    box-shadow: none;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.small {
+    padding: 4px 6px 4px 6px;
+    font-size: 90%;
+}
+
+.success-btn {
+    background-color: #228B22;
+    border-color: #228B22;
+}
+
+.success-btn:hover,
+.success-btn:active {
+    background-color: #225e21;
+    border-color: #225e21;
+}
+
+.primary-btn {
+    background-color: #1b3ac4;
+    border-color: #1b3ac4;
+}
+
+.primary-btn:hover, 
+.primary-btn:active {
+    background-color: #031e99;
+    border-color: #031e99;
+}
+
+.danger-btn {
+    background-color: #f23e3e;
+    border-color: #f23e3e;
+}
+
+.danger-btn:hover,
+.danger-btn:active {
+    background-color: #a32a2a;
+    border-color: #a32a2a;
+}
+
+.clearfix { zoom : 1; }
+.clearfix:after { 
+    content : '';
+    clear : both;
+    display : block;
+    height: 0;
+    visibility: hidden;
+}
+
+#wrapper {
+    overflow: auto;
+    height: 100%;
+}
+
+aside, section, nav {
+    display: block;
+    float:left;
+}
+
+/*=========navbar===========*/
+nav {
+    position: fixed;
+    background-color: #333;
+    width: 100%;
+    display: none;
+    font-size: 170%;
+    color: white;   
+    padding: 10px 0px 5px 15px; 
+}
+
+nav a {
+    color: white;
+}
+
+
+/*=========sidebar==========*/
+aside {
+    width: 19%;
+    background-color: #444;
+    min-height: 100%;
+    display: block;
+    color : #999;
+}
+
+#logo-menu {
+    font-size: 150%;
+    padding: 7%;
+    background-color: #333;
+    font-weight: 600;
+    text-align: center;
+    color: #fff;
+    display: block;
+}
+
+#user-profile {
+    margin-top: 7%;
+    text-align: center;
+}
+
+#user-profile #profile-description {
+    display: block;
+    float: left;
+    width: 70%;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+#user-profile #profile-description p:first-child {
+    padding-left: 1%;
+    font-weight: 900;
+}
+
+#user-profile #profile-description p {
+    padding-left: 1%;
+    font-size: 85%;
+    margin-top: 4%;
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+#user-profile #profile-description p:last-child {
+    padding-left: 0px;
+}
+
+#user-profile #profile-picture {
+    background-size: cover;
+    width: 30%;
+    padding: 0% 0% 0% 2%;
+    box-sizing: border-box;
+    float: left;
+    display: block;
+}
+
+#user-profile #profile-picture img {
+    border-radius: 50%;
+    background-size: cover;
+    width: 55px;
+}
+
+aside ul {
+    width: 100%;
+    display: block;
+    margin-top: 7%;
+    float: left;
+}
+
+aside ul li {
+    transition: background-color 0.2s, color 0.2s;
+    padding: 12px 2px 12px 10px;
+    border-bottom: 0px solid;
+    border-top: 1px solid #555;
+    cursor: pointer;
+}
+
+aside ul li i {
+    padding-right: 7%;
+    font-size: 120%;
+    
+}
+
+aside ul li:last-child {
+    border-bottom: 1px solid #555;
+}
+
+aside ul li:hover {
+    color : #bbb;
+    background-color: #363636;
+}
+
+
+/*========section=========*/
+section {
+    display: block;
+    float: left;
+    background-color: #e1e1e1;
+    width: 81%;
+    min-height: 100%;
+    height: initial;
+}
+
+section .section {
+    padding: 7px 25px 7px 25px;
+}
+
+canvas {
+    height: 300%;
+}
+
+#main-chart {
+    height: 100%;
+    position: block;
+}
+
+.box-well {
+    padding: 12px 12px 12px 12px;
+    background-color: #f5f5f5;
+}
+
+.box-well h4 {
+    font-size: 115%;
+}
+
+.score-number, .score-description {
+    margin-top: 7%;    
+}
+
+.score-number {
+    font-size: 200%;
+}
+
+.score-description.up {
+    color : #228B22;
+}
+
+.score-description.down {
+    color : #8B0000;
+}

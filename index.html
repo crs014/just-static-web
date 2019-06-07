@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Toko Jelek</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="vendor/css/normalize.css"/>
+    <link rel="stylesheet" type="text/css" href="vendor/css/grid.css"/>
+    <link rel="stylesheet" type="text/css" href="vendor/css/ionicons.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css">
+    <link rel="stylesheet" type="text/css" href="resources/style.css"/>
+    <link rel="stylesheet" type="text/css" href="resources/queries.css"/>
+</head>
+<body>
+    <nav>
+        <a href="#">
+            <i class="ion-navicon-round"></i>
+        </a>
+    </nav>
+    <aside>
+        <div id="logo-menu">
+            Toko Jelek
+        </div>
+        <div id="user-profile">
+            <div id="profile-picture">
+                <img src="resources/blank-dp.png" alt="blank-dp"/>
+            </div>
+            <div id="profile-description">
+                <p>Cristono Wijaya</p>
+                <p>Admin</p>
+                <p>
+                    <button class="btn small primary-btn"><i class="ion-gear-a"></i> Setting</button>
+                    <button class="btn small danger-btn"><i class="ion-log-out"></i> Log out</button>
+                </p>
+            </div>
+        </div>
+        <ul>
+            <li><i class='ion-ionic'></i>Dashboard</li>
+            <li><i class="ion-cube"></i>Product</li>
+            <li><i class="ion-ios-browsers"></i>Category</li>
+            <li><i class="ion-arrow-down-a"></i>Sales</li>
+            <li><i class="ion-arrow-up-a"></i>Purchase</li>
+            <li><i class="ion-stats-bars"></i>Report</li>
+            <li><i class="ion-android-contact"></i>Employee</li>
+            <li><i class="ion-person"></i>User</li>
+        </ul>
+    </aside>
+    <section>
+        <div class="section">
+            <div class="row">
+                <h1 class="col span-2-of-2">Dashboard</h1>
+            </div>
+            <div class="row">                
+                <div class="col span-1-of-3 box-well">
+                    <h4>Total sale this month</h4>
+                    <p class="score-number">$2000</p>
+                    <p class="score-description up"><i class="ion-arrow-up-a"></i> this month is up 700</p>
+                </div>
+                <div class="col span-1-of-3 box-well">
+                    <h4>Total purchase this month</h4>
+                    <p class="score-number">$1500</p>
+                    <p class="score-description down"><i class="ion-arrow-down-a"></i> this month is down 500</p>
+                </div>
+                <div class="col span-1-of-3 box-well">
+                    <h4>Total profit this month</h4>
+                    <p class="score-number">$500</p>
+                    <p class="score-description up"><i class="ion-arrow-up-a"></i> this month is up 200</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col span-3-of-4 box-well">
+                    <div id="main-chart">
+                        <canvas id="display-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<script>
+var data = {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [
+            {
+                label: 'Sale',
+                backgroundColor: 'transparent',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [500,1000,500,300, 1500, 1300, 2000]
+            },
+            {
+                label: 'Purchase',
+                backgroundColor: 'transparent',
+                borderColor: 'blue',
+                data: [600,2000,300,200, 1300, 2000, 1500]
+            }
+        ]
+};
+var ctx = document.getElementById("display-chart").getContext('2d');
+var myLineChart = new Chart(ctx, {
+    type: 'line',
+    data: data,
+    options: {
+        responsive: true,
+        showLines : true,
+        spanGaps : false,
+        elements: {
+            line: {
+                tension: 0 // disables bezier curves
+            }
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:false
+                    }
+                }]
+            }
+        }
+    }
+});  
+</script>
+</html>
