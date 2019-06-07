@@ -24,6 +24,7 @@
     body { 
         font-size: 17px; 
     }
+
     aside {
         width: 25%;
     }
@@ -59,12 +60,14 @@
     }
 
     aside {
+        box-shadow: 0 9px 9px #1f1f1f;
+        animation-duration: 0.1s;
         padding-top: 10vh;
         position: fixed;
         font-size: 100%;
         height: 100%;
         width: 49%;
-        display: block;
+        display: none;
         overflow-x: scroll;
     }
 

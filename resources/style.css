@@ -110,11 +110,13 @@ nav a {
 
 /*=========sidebar==========*/
 aside {
+    visibility:visible;
     width: 19%;
     background-color: #444;
     min-height: 100%;
     display: block;
     color : #999;
+    overflow: show;
 }
 
 #logo-menu {

@@ -8,15 +8,16 @@
     <link rel="stylesheet" type="text/css" href="vendor/css/normalize.css"/>
     <link rel="stylesheet" type="text/css" href="vendor/css/grid.css"/>
     <link rel="stylesheet" type="text/css" href="vendor/css/ionicons.min.css">
+    <link rel="stylesheet" type='text/css' href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css">
     <link rel="stylesheet" type="text/css" href="resources/style.css"/>
     <link rel="stylesheet" type="text/css" href="resources/queries.css"/>
 </head>
 <body>
     <nav>
-        <a href="#">
-            <i class="ion-navicon-round"></i>
-        </a>
+        <p id="nav-button">
+            <i class="ion-navicon-round" id="nav-icon"></i>
+        </p>
     </nav>
     <aside>
         <div id="logo-menu">
@@ -78,6 +79,9 @@
         </div>
     </section>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
 <script>
 var data = {
@@ -120,6 +124,34 @@ var myLineChart = new Chart(ctx, {
             }
         }
     }
-});  
+});
+
+const icon = document.getElementById("nav-button");
+const navicon = document.getElementById("nav-icon");
+const aside = document.getElementsByTagName("aside");
+console.log(aside);
+icon.addEventListener("click", (e) => {
+    if(navicon.className === "ion-navicon-round") {
+        navicon.className="ion-close-round";
+        aside[0].className="animated slideInLeft";
+        aside[0].style.display ='block';  
+    }
+    else {
+        aside[0].className="animated slideOutLeft";
+        navicon.className="ion-navicon-round";
+    }  
+});
+
+window.addEventListener('resize', function () {
+    if(window.innerWidth >= 768) {
+        aside[0].className = "animated slideInLeft";
+    }
+    else if (window.innerWidth <= 767) {
+        navicon.className = "ion-navicon-round"
+        aside[0].className ="animated slideOutLeft";
+    }
+});
+
+
 </script>
 </html>
