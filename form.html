@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Toko Jelek</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="vendor/css/normalize.css"/>
+    <link rel="stylesheet" type="text/css" href="vendor/css/grid.css"/>
+    <link rel="stylesheet" type="text/css" href="vendor/css/ionicons.min.css">
+    <link rel="stylesheet" type='text/css' href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css">
+    <link rel="stylesheet" type="text/css" href="resources/style.css"/>
+    <link rel="stylesheet" type="text/css" href="resources/queries.css"/>
+</head>
+<body>
+    <nav>
+        <p id="nav-button">
+            <i class="ion-navicon-round" id="nav-icon"></i>
+        </p>
+    </nav>
+    <aside>
+        <div id="logo-menu">
+            Toko Jelek
+        </div>
+        <div id="user-profile">
+            <div id="profile-picture">
+                <img src="resources/blank-dp.png" alt="blank-dp"/>
+            </div>
+            <div id="profile-description">
+                <p>Cristono Wijaya</p>
+                <p>Admin</p>
+                <p>
+                    <button class="btn small primary-btn"><i class="ion-gear-a"></i> Setting</button>
+                    <button class="btn small danger-btn"><i class="ion-log-out"></i> Log out</button>
+                </p>
+            </div>
+        </div>
+        <ul>
+            <li><i class='ion-ionic'></i>Dashboard</li>
+            <li><i class="ion-cube"></i>Product</li>
+            <li><i class="ion-ios-browsers"></i>Category</li>
+            <li><i class="ion-arrow-down-a"></i>Sales</li>
+            <li><i class="ion-arrow-up-a"></i>Purchase</li>
+            <li><i class="ion-stats-bars"></i>Report</li>
+            <li><i class="ion-android-contact"></i>Employee</li>
+            <li><i class="ion-person"></i>User</li>
+        </ul>
+    </aside>
+    <section>
+        <div class="section">
+            <div class="row">
+                <h1 class="col span-2-of-2">Form</h1>
+            </div>
+            <div class="row">                
+                <form>
+                    <div class="col span-4-of-4 box-well">
+                        <div class="group-input">
+                            <label class="label-input">Text Type:</label>
+                            <input type="text" class="form-input"/>
+                        </div>
+                        <div class="group-input">
+                            <label class="label-input">Invalid:</label>
+                            <input type="email" class="form-input" value="invalid"/>
+                        </div>
+                        <div class="group-input">
+                            <label class="label-input">Disabled:</label>
+                            <input type="text" class="form-input" disabled/>
+                        </div>
+                        <div class="group-input">
+                            <label class="label-input">Number Type:</label>
+                            <input type="Number" class="form-input"/>
+                        </div>
+                        <div class="group-input">
+                            <label class="label-input">Select:</label>
+                            <select class="form-input">
+                                <option>Burger</option>
+                                <option>Cola</option>
+                            </select>
+                        </div>
+                        <h2>Radio</h2>
+                        <label class="radio">
+                            <input type="radio" name="optradio" checked> Option 1
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="optradio"> Option 2
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="optradio"> Option 3
+                        </label>
+                        <br/>
+                        <h2>Radio Inline</h2>
+                        <label class="radio-inline">
+                            <input type="radio" name="optradio1" checked> Option 1
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="optradio1"> Option 2
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="optradio1"> Option 3
+                        </label>
+                        <br/>
+                        <label class="radio-inline">
+                            <input type="radio" name="optradio2" checked> Option 1
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="optradio2"> Option 2
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="optradio2"> Option 3
+                        </label>
+                        <br/>
+                        <br/>
+                        <h2>Checkbox</h2>
+                        <label class="checkbox"><input type="checkbox" value=""> Option 1</label>
+                        <label class="checkbox"><input type="checkbox" value=""> Option 2</label>
+                        <label class="checkbox disabled"><input type="checkbox" value="" disabled> Option 3</label>
+                    
+                        <br/>
+                        <h2>Checkbox Inline</h2>
+                        <label class="checkbox-inline"><input type="checkbox" value="">Option 1</label>
+                        <label class="checkbox-inline"><input type="checkbox" value="">Option 2</label>
+                        <label class="checkbox-inline"><input type="checkbox" value="">Option 3</label>
+                        <br/>
+                        <br/>
+                        <button class="btn success-btn">Success</button>
+                        <button class="btn primary-btn">Primary</button>
+                        <button class="btn danger-btn">Danger</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
+<script>
+const icon = document.getElementById("nav-button");
+const navicon = document.getElementById("nav-icon");
+const aside = document.getElementsByTagName("aside");
+console.log(aside);
+icon.addEventListener("click", (e) => {
+    if(navicon.className === "ion-navicon-round") {
+        navicon.className="ion-close-round";
+        aside[0].className="animated slideInLeft";
+        aside[0].style.display ='block';  
+    }
+    else {
+        aside[0].className="animated slideOutLeft";
+        navicon.className="ion-navicon-round";
+    }  
+});
+
+window.addEventListener('resize', function () {
+    if(window.innerWidth >= 768) {
+        aside[0].className = "animated slideInLeft";
+    }
+    else if (window.innerWidth <= 767) {
+        navicon.className = "ion-navicon-round"
+        aside[0].className ="animated slideOutLeft";
+    }
+});
+</script>
+</html>
