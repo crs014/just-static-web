@@ -14,6 +14,27 @@
     <link rel="stylesheet" type="text/css" href="resources/queries.css"/>
 </head>
 <body>
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-close">&times;</span>
+                <h2>Modal Header</h2>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="group-input">
+                        <label class="label-input">Text Type:</label>
+                        <input type="text" class="form-input"/>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn primary-btn">Primary</button>
+                <button class="btn danger-btn">Danger</button>
+            </div>
+        </div>
+    </div>
     <nav>
         <p id="nav-button">
             <i class="ion-navicon-round" id="nav-icon"></i>
@@ -118,13 +139,13 @@
                     
                         <br/>
                         <h2>Checkbox Inline</h2>
-                        <label class="checkbox-inline"><input type="checkbox" value="">Option 1</label>
-                        <label class="checkbox-inline"><input type="checkbox" value="">Option 2</label>
-                        <label class="checkbox-inline"><input type="checkbox" value="">Option 3</label>
+                        <label class="checkbox-inline"><input type="checkbox" value=""> Option 1</label>
+                        <label class="checkbox-inline"><input type="checkbox" value=""> Option 2</label>
+                        <label class="checkbox-inline"><input type="checkbox" value=""> Option 3</label>
                         <br/>
                         <br/>
-                        <button class="btn success-btn">Success</button>
-                        <button class="btn primary-btn">Primary</button>
+                        <button type="button" class="btn success-btn">Success</button>
+                        <button type="button" class="btn primary-btn" target-modal-id="myModal">Primary</button>
                         <button class="btn danger-btn">Danger</button>
                     </div>
                 </form>
@@ -135,31 +156,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
-<script>
-const icon = document.getElementById("nav-button");
-const navicon = document.getElementById("nav-icon");
-const aside = document.getElementsByTagName("aside");
-console.log(aside);
-icon.addEventListener("click", (e) => {
-    if(navicon.className === "ion-navicon-round") {
-        navicon.className="ion-close-round";
-        aside[0].className="animated slideInLeft";
-        aside[0].style.display ='block';  
-    }
-    else {
-        aside[0].className="animated slideOutLeft";
-        navicon.className="ion-navicon-round";
-    }  
-});
-
-window.addEventListener('resize', function () {
-    if(window.innerWidth >= 768) {
-        aside[0].className = "animated slideInLeft";
-    }
-    else if (window.innerWidth <= 767) {
-        navicon.className = "ion-navicon-round"
-        aside[0].className ="animated slideOutLeft";
-    }
-});
-</script>
+<script src="resources/script.js"></script>
 </html>

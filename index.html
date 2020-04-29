@@ -83,75 +83,51 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<script src="resources/script.js"></script>
 <script>
+    /*=====chart start======*/
 var data = {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [
-            {
-                label: 'Sale',
-                backgroundColor: 'transparent',
-                borderColor: 'rgb(255, 99, 132)',
-                data: [500,1000,500,300, 1500, 1300, 2000]
-            },
-            {
-                label: 'Purchase',
-                backgroundColor: 'transparent',
-                borderColor: 'blue',
-                data: [600,2000,300,200, 1300, 2000, 1500]
-            }
-        ]
-};
-var ctx = document.getElementById("display-chart").getContext('2d');
-var myLineChart = new Chart(ctx, {
-    type: 'line',
-    data: data,
-    options: {
-        responsive: true,
-        showLines : true,
-        spanGaps : false,
-        elements: {
-            line: {
-                tension: 0 // disables bezier curves
-            }
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    datasets: [
+        {
+            label: 'Sale',
+            backgroundColor: 'transparent',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [500,1000,500,300, 1500, 1300, 2000]
         },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero:false
-                    }
-                }]
-            }
+        {
+            label: 'Purchase',
+            backgroundColor: 'transparent',
+            borderColor: 'blue',
+            data: [600,2000,300,200, 1300, 2000, 1500]
+        }
+    ]
+};
+
+var ctx = document.getElementById("display-chart").getContext('2d');
+
+var myLineChart = new Chart(ctx, {
+type: 'line',
+data: data,
+options: {
+    responsive: true,
+    showLines : true,
+    spanGaps : false,
+    elements: {
+        line: {
+            tension: 0 // disables bezier curves
+        }
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:false
+                }
+            }]
         }
     }
+}
 });
-
-const icon = document.getElementById("nav-button");
-const navicon = document.getElementById("nav-icon");
-const aside = document.getElementsByTagName("aside");
-console.log(aside);
-icon.addEventListener("click", (e) => {
-    if(navicon.className === "ion-navicon-round") {
-        navicon.className="ion-close-round";
-        aside[0].className="animated slideInLeft";
-        aside[0].style.display ='block';  
-    }
-    else {
-        aside[0].className="animated slideOutLeft";
-        navicon.className="ion-navicon-round";
-    }  
-});
-
-window.addEventListener('resize', function () {
-    if(window.innerWidth >= 768) {
-        aside[0].className = "animated slideInLeft";
-    }
-    else if (window.innerWidth <= 767) {
-        navicon.className = "ion-navicon-round"
-        aside[0].className ="animated slideOutLeft";
-    }
-});
-
-
 </script>
 </html>

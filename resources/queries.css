@@ -50,6 +50,14 @@
         font-weight:700; 
     }
 
+    .modal {
+        padding-top: 100px;
+    }
+
+    .modal-content {
+        width: 85%;
+    }
+
     nav {
         z-index: 1;
         display : block;
